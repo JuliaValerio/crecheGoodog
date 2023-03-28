@@ -3,6 +3,7 @@ package creche.controller;
 import java.util.Scanner;
 
 import creche.cliente.cliente;
+import creche.pacotes.Pacotes;
 import creche.util.Cores;
 
 public class Menu {
@@ -14,6 +15,10 @@ public class Menu {
 		
 		int opcao;
 		cliente cl = new cliente("", "", "", "");
+		
+		Pacotes p1 = new Pacotes (150f,"alimentação", "Mensal");
+		Pacotes p2 = new Pacotes (500f,"alimentação", "Semestral");
+		Pacotes p3 = new Pacotes (800f,"alimentação", "Anual");
 		
     	
 		while (true) {
@@ -67,6 +72,9 @@ public class Menu {
 				
 			case 3:
 				System.out.println("Adquirir Tabela pacotes com preços\n\n");
+				p1.visualizar();
+				p2.visualizar();
+				p3.visualizar();
 
 				break;
 			case 4:

@@ -1,6 +1,8 @@
 package creche.controller;
 
 import java.util.Scanner;
+
+import creche.cliente.cliente;
 import creche.util.Cores;
 
 public class Menu {
@@ -11,8 +13,10 @@ public class Menu {
 		Scanner leia = new Scanner(System.in);
 		
 		int opcao;
-
-    	while (true) {
+		cliente cl = new cliente("", "", "", "");
+		
+    	
+		while (true) {
 
 			System.out.println(Cores.ANSI_BLACK_BACKGROUND + Cores.TEXT_CYAN_BRIGHT
 					+ "******************************************************");
@@ -47,16 +51,22 @@ public class Menu {
 			}
 
 			switch (opcao) {
-			case 1:
-				System.out.println("Novo Cadastro cliente\n\n");
-
+			
+			case 1:  
+				System.out.println("**Cadastro cliente\n\n**");
+				cl.cadastrar();
+				
 				break;
+				
 			case 2:
 				System.out.println("Atualizar Dados do cliente\n\n");
-
+				cl.visualizar();
+				
+				
 				break;
+				
 			case 3:
-				System.out.println("Adquirir Tabela pacotes com pre\u00E7os\n\n");
+				System.out.println("Adquirir Tabela pacotes com preços\n\n");
 
 				break;
 			case 4:

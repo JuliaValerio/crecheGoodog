@@ -75,12 +75,14 @@ public class Menu {
 				break;
 			
 			case 3:
+
 				System.out.println("Listar clientes ativos \n\n");
 				 for (cliente cliente : clientes) {
                      cliente.visualizar();
                      System.out.println();
                  }
 				keyPress();
+
 				break;
 				
 			case 4:

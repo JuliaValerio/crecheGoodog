@@ -75,6 +75,8 @@ public class Menu {
 				p1.visualizar();
 				p2.visualizar();
 				p3.visualizar();
+				System.out.println("Escolha o pacote que deseja adquirir! \n\n");
+
 
 				break;
 			case 4:

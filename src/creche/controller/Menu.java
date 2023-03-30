@@ -21,10 +21,6 @@ public class Menu {
 		cliente clienteSelecionado = null;
 
 		
-		Pacotes p1 = new Pacotes (150f,"alimentação", "Mensal");
-		Pacotes p2 = new Pacotes (500f,"alimentação", "Semestral");
-		Pacotes p3 = new Pacotes (800f,"alimentação", "Anual");
-		
     	
 		while (true) {
 
@@ -64,7 +60,7 @@ public class Menu {
 			
 			case 1:  
 				System.out.println("**Cadastro de novo cliente\n\n**");
-				cliente novoCliente = new cliente("", "", "", "");
+				cliente novoCliente = new cliente("", "", "", "", "", "", "", "","");
                 novoCliente.cadastrar();
                 clientes.add(novoCliente);
 				

@@ -2,46 +2,66 @@ package creche.pacotes;
 
 public class Pacotes {
 	
-	float preco;
-	String itens;
-	String periodo;
+	private String pacote1;
+	private String pacote2;
+	private String pacote3;
 	
-	public Pacotes(float preco, String itens, String periodo) {
-		this.preco = preco;
-		this.itens = itens;
-		this.periodo = periodo;
-	}
-
-	public float getPreco() {
-		return preco;
-	}
-
-	public void setPreco(float preco) {
-		this.preco = preco;
-	}
-
-	public String getItens() {
-		return itens;
-	}
-
-	public void setItens(String itens) {
-		this.itens = itens;
-	}
-
-	public String getPeriodo() {
-		return periodo;
-	}
-
-	public void setPeriodo(String periodo) {
-		this.periodo = periodo;
-	}
 	
+	public Pacotes(String pacote1, String pacote2, String pacote3) {
+		super();
+		this.pacote1 = pacote1;
+		this.pacote2 = pacote2;
+		this.pacote3 = pacote3;
+	}
+
+
+	public String getPacote1() {
+		return pacote1;
+	}
+
+
+
+
+	public void setPacote1(String pacote1) {
+		this.pacote1 = pacote1;
+	}
+
+
+
+
+	public String getPacote2() {
+		return pacote2;
+	}
+
+
+
+
+	public void setPacote2(String pacote2) {
+		this.pacote2 = pacote2;
+	}
+
+
+
+
+	public String getPacote3() {
+		return pacote3;
+	}
+
+
+
+
+	public void setPacote3(String pacote3) {
+		this.pacote3 = pacote3;
+	}
+
+
+
+
 	public void visualizar() {
 		
-		System.out.println("Itens: " + this.itens);
-		System.out.println("Preço: " + this.preco);
-		System.out.println("Periodo: " + this.periodo);
-		System.out.println("******************************************************");
+		System.out.println("Pacote 1: Mensal " + this.pacote1);
+		System.out.println("Pacote 2: Semestral " + this.pacote2);
+		System.out.println("Pacote 3: Anual " + this.pacote3);
 	
 	
 	}

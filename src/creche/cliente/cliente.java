@@ -2,29 +2,31 @@ package creche.cliente;
 
 import java.util.Scanner;
 
-public class cliente {
+import creche.pacotes.Pacotes;
+
+public class cliente extends Pacotes {
 	
 		private String nomeDono;
 		private String nomePet;
 		private String raca;
 		private String endereco;
+		private int pacote;
 		
-		
-		public cliente(String nomeDono, String nomePet, String raca, String endereco) {
-			super();
+		public cliente(String pacote1, String pacote2, String pacote3, String nomeDono, String nomePet, String raca,
+				String endereco, String string, String pacote) {
+			super(pacote1, pacote2, pacote3);
 			this.nomeDono = nomeDono;
 			this.nomePet = nomePet;
 			this.raca = raca;
 			this.endereco = endereco;
+			this.pacote = 0;
 		}
-
-
 		
 		
+
 		public String getNomeDono() {
 			return nomeDono;
 		}
-
 
 
 
@@ -34,11 +36,9 @@ public class cliente {
 
 
 
-
 		public String getNomePet() {
 			return nomePet;
 		}
-
 
 
 
@@ -48,11 +48,9 @@ public class cliente {
 
 
 
-
 		public String getRaca() {
 			return raca;
 		}
-
 
 
 
@@ -62,22 +60,25 @@ public class cliente {
 
 
 
-
 		public String getEndereco() {
 			return endereco;
 		}
 
 
 
-
 		public void setEndereco(String endereco) {
 			this.endereco = endereco;
 		}
+			
 
-
-
-
-
+		public String getPacote() {
+			switch (pacote) {
+			case 1 -> {return "Mensal";}
+			case 2 -> {return "Semestral";}
+			case 3 -> {return "Anual";}
+			default -> {return null;}
+			}
+		}
 
 		public void cadastrar() {
 			
@@ -92,6 +93,12 @@ public class cliente {
 			raca = leia.next();
 			System.out.println("Digite o seu endereço" + endereco);
 			endereco = leia.next();
+			System.out.println("Pacote 1: Mensal");
+			System.out.println("Pacote 2: Semestral ");
+			System.out.println("Pacote 3: Anual");
+			System.out.println("Escolha o pacote: ");
+			pacote = leia.nextInt();
+			
 			System.out.println("Cadastro finalizado com sucesso!!");
 		}
 		
@@ -100,5 +107,6 @@ public class cliente {
 			System.out.println("Nome do Pet: " + nomePet );
 			System.out.println("Raça do Pet: " + raca);
 			System.out.println("Endereço: " + endereco);
+			System.out.println("Pacote: " + getPacote());
 		}
 }

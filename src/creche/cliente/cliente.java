@@ -9,51 +9,76 @@ public class cliente {
 		private String raca;
 		private String endereco;
 		
-		/**
-		 * @param nomeDono
-		 * @param nomePet
-		 * @param raça
-		 * @param endereço
-		 */
-		public cliente(String nomeDono, String nomePet, String raça, String endereço) {
+		
+		public cliente(String nomeDono, String nomePet, String raca, String endereco) {
+			super();
 			this.nomeDono = nomeDono;
 			this.nomePet = nomePet;
-			this.raca = raça;
-			this.endereco = endereço;
+			this.raca = raca;
+			this.endereco = endereco;
 		}
 
+
+		
+		
 		public String getNomeDono() {
 			return nomeDono;
 		}
+
+
+
 
 		public void setNomeDono(String nomeDono) {
 			this.nomeDono = nomeDono;
 		}
 
+
+
+
 		public String getNomePet() {
 			return nomePet;
 		}
+
+
+
 
 		public void setNomePet(String nomePet) {
 			this.nomePet = nomePet;
 		}
 
-		public String getRaça() {
+
+
+
+		public String getRaca() {
 			return raca;
 		}
 
-		public void setRaça(String raca) {
+
+
+
+		public void setRaca(String raca) {
 			this.raca = raca;
 		}
 
-		public String getEndereço() {
+
+
+
+		public String getEndereco() {
 			return endereco;
 		}
 
-		public void setEndereço(String endereco) {
+
+
+
+		public void setEndereco(String endereco) {
 			this.endereco = endereco;
 		}
-		
+
+
+
+
+
+
 		public void cadastrar() {
 			
 			Scanner leia = new Scanner(System.in);

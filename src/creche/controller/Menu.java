@@ -1,27 +1,24 @@
 package creche.controller;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+
 import creche.cliente.cliente;
-import creche.pacotes.Pacotes;
 import creche.util.Cores;
 
 public class Menu {
-    private static List<cliente> clientes = new ArrayList<>();
-
+	private static List<cliente> clientes = new ArrayList<>();
 
 	public static void main(String[] args) {
 
-
 		Scanner leia = new Scanner(System.in);
-		
-		
+
+		String nomeDelete;
 		int opcao;
 		cliente clienteSelecionado = null;
 
-		
-    	
 		while (true) {
 
 			System.out.println(Cores.TEXT_YELLOW + Cores.ANSI_BLACK_BACKGROUND);
@@ -31,7 +28,7 @@ public class Menu {
 					+ " #  #### #    # #    # #     # #    # #       \r\n"
 					+ " #     # #    # #    # #     # #    # #  ###  \r\n"
 					+ " #     # #    # #    # #     # #    # #    #  \r\n"
-					+ "  #####   ####   ####  ######   ####   ####   " );
+					+ "  #####   ####   ####  ######   ####   ####   ");
 			System.out.println(Cores.TEXT_RESET);
 			System.out.println("*****************************************************");
 			System.out.println("*            1 - Criar cadastro de novo Cliente     *");
@@ -44,7 +41,7 @@ public class Menu {
 			opcao = leia.nextInt();
 
 			if (opcao == 5) {
-				System.out.println(Cores.TEXT_GREEN + Cores.ANSI_BLACK_BACKGROUND    );
+				System.out.println(Cores.TEXT_GREEN + Cores.ANSI_BLACK_BACKGROUND);
 				System.out.println("*******************************************************");
 				System.out.println("*                                                     *");
 				System.out.println("* A Creche GooDog agradece o seu acesso! :)           *");
@@ -57,58 +54,76 @@ public class Menu {
 			}
 
 			switch (opcao) {
-			
-			case 1:  
+
+			case 1:
 				System.out.println("**Cadastro de novo cliente\n\n**");
-				cliente novoCliente = new cliente("", "", "", "", "", "", "", "","");
-                novoCliente.cadastrar();
-                clientes.add(novoCliente);
-				
-                keyPress();
+				cliente novoCliente = new cliente("", "", "", "", "", "", "", "", "");
+				novoCliente.cadastrar();
+				clientes.add(novoCliente);
+
+				keyPress();
 				break;
-				
+
 			case 2:
 				System.out.println("Atualizar Dados dos clientes\n\n");
 				System.out.println("Selecione o cliente que deseja atualizar");
-				
+
 				keyPress();
 				break;
-			
+
 			case 3:
-
 				System.out.println("Listar clientes ativos \n\n");
-				 for (cliente cliente : clientes) {
-                     cliente.visualizar();
-                     System.out.println();
-                 }
-				keyPress();
+				for (cliente cliente : clientes) {
+					cliente.visualizar();
+					System.out.println();
 
-				break;
-				
-			case 4:
-				System.out.println("Remover clientes \n\n");
-				
+				}
 				keyPress();
 				break;
+
+			case 4:
+				System.out.println(Cores.TEXT_WHITE + "Apagar Cliente\n\n");
+
+				System.out.println("Digite o nome do cliente: ");
+				nomeDelete = leia.next();
 				
+				int index = -1;
+				for (int i = 0; i < clientes.size(); i++) {
+				    if (clientes.get(i).getNomeDono().equals(nomeDelete)) {
+				        index = i;
+				        break;
+				    }
+				}
+			
+
+				if (index != -1) {
+				    clientes.remove(index);
+				    System.out.println("\nA Conta do cliente: " + nomeDelete + " foi deletada com sucesso!");
+				} else {
+				    System.out.println("\nA Conta do cliente: " + nomeDelete + " não foi encontrada!");
+				}
+				keyPress();
+				break;
+
 			default:
 				System.out.println("\nOpção Inválida!\n");
 				break;
 			}
 		}
+
 	}
-	
+
 	public static void sobre() {
 		System.out.println("Projeto feito por: ");
 		System.out.println("Andresa/ Carolina/ Daisy/ Joyce/ Julia/ Katarina");
 		System.out.println("GitHub: github.com/amarcal07 ; github.com/JuliaValerio ; github.com/302kt");
 	}
-	
+
 	public static void keyPress() {
 		try {
-			System.out.println(Cores.TEXT_RESET +"Pressione ENTER para continuar");
+			System.out.println(Cores.TEXT_RESET + "Pressione ENTER para continuar");
 			System.in.read();
-		}catch(IOException e) {
+		} catch (IOException e) {
 			System.out.println("Erro de digitação!");
 		}
 	}

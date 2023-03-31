@@ -2,8 +2,6 @@ package creche.cliente;
 
 import java.util.Scanner;
 
-import creche.pacotes.Pacotes;
-
 public class cliente extends Pacotes {
 	
 		private String nomeDono;

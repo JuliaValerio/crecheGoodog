@@ -1,6 +1,6 @@
-package creche.pacotes;
+package creche.cliente;
 
-public class Pacotes {
+public abstract class Pacotes {
 	
 	private String pacote1;
 	private String pacote2;

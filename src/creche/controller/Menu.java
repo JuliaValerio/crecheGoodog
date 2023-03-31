@@ -73,12 +73,9 @@ public class Menu {
 				}
 
 				int escolha = leia.nextInt();
-				if (escolha != -1) {
-					clienteSelecionado = clientes.get(escolha - 1);				 
-				} else {
-				    System.out.println("\n O cliente: " + escolha + " não foi encontrada!");
-				}
 				
+				clienteSelecionado = clientes.get(escolha - 1);
+
 				System.out.println("Qual dado deseja atualizar para " + clienteSelecionado.getNomeDono() + "?");
 				System.out.println("1 - Nome do Dono");
 				System.out.println("2 - Endereço");

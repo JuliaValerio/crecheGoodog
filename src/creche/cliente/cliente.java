@@ -10,19 +10,33 @@ public class cliente extends Pacotes {
 		private String nomePet;
 		private String raca;
 		private String endereco;
+		private String telefone;
 		private int pacote;
 		
 		public cliente(String pacote1, String pacote2, String pacote3, String nomeDono, String nomePet, String raca,
-				String endereco, String string, String pacote) {
+				String endereco, String telefone, String pacote) {
 			super(pacote1, pacote2, pacote3);
 			this.nomeDono = nomeDono;
 			this.nomePet = nomePet;
 			this.raca = raca;
 			this.endereco = endereco;
 			this.pacote = 0;
+			this.telefone = telefone;
 		}
 		
 		
+
+		public String getTelefone() {
+			return telefone;
+		}
+
+
+
+		public void setTelefone(String telefone) {
+			this.telefone = telefone;
+		}
+
+
 
 		public String getNomeDono() {
 			return nomeDono;
@@ -91,8 +105,10 @@ public class cliente extends Pacotes {
 			nomePet = leia.next();
 			System.out.println("Digite a raça do Pet: " + raca);
 			raca = leia.next();
-			System.out.println("Digite o seu endereço" + endereco);
+			System.out.println("Digite o endereço: " + endereco);
 			endereco = leia.next();
+			System.out.println("Digite o telefone: ");
+			telefone =leia.next();
 			System.out.println("Pacote 1: Mensal");
 			System.out.println("Pacote 2: Semestral ");
 			System.out.println("Pacote 3: Anual");
@@ -107,6 +123,7 @@ public class cliente extends Pacotes {
 			System.out.println("Nome do Pet: " + nomePet );
 			System.out.println("Raça do Pet: " + raca);
 			System.out.println("Endereço: " + endereco);
+			System.out.println("Telefone: " + telefone);
 			System.out.println("Pacote: " + getPacote());
 		}
 }

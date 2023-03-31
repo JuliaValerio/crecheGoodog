@@ -67,10 +67,51 @@ public class Menu {
 			case 2:
 				System.out.println("Atualizar Dados dos clientes\n\n");
 				System.out.println("Selecione o cliente que deseja atualizar");
+				
+				for (int i = 0; i < clientes.size(); i++) {
+			        System.out.println((i+1) + " - " + clientes.get(i).getNomeDono());
+			    }
+				
+			    int escolha = leia.nextInt();
+			    clienteSelecionado = clientes.get(escolha - 1);
+			    
+			    System.out.println("Qual dado deseja atualizar para " + clienteSelecionado.getNomeDono() + "?");
+			    System.out.println("1 - Nome do Dono");
+			    System.out.println("2 - Endereço");
+			    System.out.println("3 - Telefone");
+			    
+			    int opcaoDado = leia.nextInt();
 
-				keyPress();
-				break;
-
+			    switch (opcaoDado) {
+			    case 1:
+		            System.out.println("Digite o novo nome: ");
+		            String novoNome = leia.next();
+		            
+		            clienteSelecionado.setNomeDono(novoNome);
+		            System.out.println("Nome atualizado para: " + clienteSelecionado.getNomeDono());
+		            
+		            keyPress();
+		            break;
+			    
+			    case 2:
+		            System.out.println("Digite o novo endereço: ");
+		            String novoEndereco = leia.next();
+		            clienteSelecionado.setEndereco(novoEndereco);
+		            System.out.println("Endereço atualizado para: " + clienteSelecionado.getEndereco());
+		            
+		            keyPress();
+		            break;
+		            
+			    case 3:
+		            System.out.println("Digite o novo telefone: ");
+		            String novoTelefone = leia.next();
+		            clienteSelecionado.setTelefone(novoTelefone);
+		            System.out.println("Telefone atualizado para: " + clienteSelecionado.getTelefone());
+		            
+		            keyPress();
+		            break;
+			 }
+			    
 			case 3:
 				System.out.println("Listar clientes ativos \n\n");
 				for (cliente cliente : clientes) {

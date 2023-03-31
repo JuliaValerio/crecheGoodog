@@ -56,7 +56,7 @@ public class Menu {
 			switch (opcao) {
 
 			case 1:
-				System.out.println("**Cadastro de novo cliente\n\n**");
+				System.out.println("Cadastro de novo cliente\n\n");
 				cliente novoCliente = new cliente("", "", "", "", "", "", "", "", "");
 				novoCliente.cadastrar();
 				clientes.add(novoCliente);
@@ -115,8 +115,19 @@ public class Menu {
 
 	public static void sobre() {
 		System.out.println("Projeto feito por: ");
-		System.out.println("Andresa/ Carolina/ Daisy/ Joyce/ Julia/ Katarina");
-		System.out.println("GitHub: github.com/amarcal07 ; github.com/JuliaValerio ; github.com/302kt");
+		System.out.println();
+		System.out.println();
+		System.out.println("Andresa Marçal   -> github.com/amarcal07");
+		System.out.println();
+		System.out.println("Carolina Araujo  -> github.com/CarolFAraujo");
+		System.out.println();
+		System.out.println("Daisy Santos     -> github.com/daisysantos");
+		System.out.println();
+		System.out.println("Joyce Rodrigues  -> github.com/carol20joyce");
+		System.out.println();
+		System.out.println("Julia Valerio    -> github.com/JuliaValerio");
+		System.out.println();
+		System.out.println("Katarina Pereira -> github.com/302kt");
 	}
 
 	public static void keyPress() {

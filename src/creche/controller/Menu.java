@@ -67,56 +67,65 @@ public class Menu {
 			case 2:
 				System.out.println("Atualizar Dados dos clientes\n\n");
 				System.out.println("Selecione o cliente que deseja atualizar");
-				
-				for (int i = 0; i < clientes.size(); i++) {
-			        System.out.println((i+1) + " - " + clientes.get(i).getNomeDono());
-			    }
-				
-			    int escolha = leia.nextInt();
-			    clienteSelecionado = clientes.get(escolha - 1);
-			    
-			    System.out.println("Qual dado deseja atualizar para " + clienteSelecionado.getNomeDono() + "?");
-			    System.out.println("1 - Nome do Dono");
-			    System.out.println("2 - Endereço");
-			    System.out.println("3 - Telefone");
-			    
-			    int opcaoDado = leia.nextInt();
 
-			    switch (opcaoDado) {
-			    case 1:
-		            System.out.println("Digite o novo nome: ");
-		            String novoNome = leia.next();
-		            
-		            clienteSelecionado.setNomeDono(novoNome);
-		            System.out.println("Nome atualizado para: " + clienteSelecionado.getNomeDono());
-		            
-		            keyPress();
-		            break;
-			    
-			    case 2:
-		            System.out.println("Digite o novo endereço: ");
-		            String novoEndereco = leia.next();
-		            clienteSelecionado.setEndereco(novoEndereco);
-		            System.out.println("Endereço atualizado para: " + clienteSelecionado.getEndereco());
-		            
-		            keyPress();
-		            break;
-		            
-			    case 3:
-		            System.out.println("Digite o novo telefone: ");
-		            String novoTelefone = leia.next();
-		            clienteSelecionado.setTelefone(novoTelefone);
-		            System.out.println("Telefone atualizado para: " + clienteSelecionado.getTelefone());
-		            
-		            keyPress();
-		            break;
-			 }
-			    
+				for (int i = 0; i < clientes.size(); i++) {
+					System.out.println((i + 1) + " - " + clientes.get(i).getNomeDono());
+				}
+
+				int escolha = leia.nextInt();
+				if (escolha != -1) {
+					clienteSelecionado = clientes.get(escolha - 1);				 
+				} else {
+				    System.out.println("\n O cliente: " + escolha + " não foi encontrada!");
+				}
+				
+				System.out.println("Qual dado deseja atualizar para " + clienteSelecionado.getNomeDono() + "?");
+				System.out.println("1 - Nome do Dono");
+				System.out.println("2 - Endereço");
+				System.out.println("3 - Telefone");
+
+				int opcaoDado = leia.nextInt();
+
+				switch (opcaoDado) {
+				case 1:
+					System.out.println("Digite o novo nome: ");
+					String novoNome = leia.next();
+
+					clienteSelecionado.setNomeDono(novoNome);
+					System.out.println("Nome atualizado para: " + clienteSelecionado.getNomeDono());
+
+					keyPress();
+					break;
+
+				case 2:
+					System.out.println("Digite o novo endereço: ");
+					String novoEndereco = leia.next();
+					clienteSelecionado.setEndereco(novoEndereco);
+					System.out.println("Endereço atualizado para: " + clienteSelecionado.getEndereco());
+
+					keyPress();
+					break;
+
+				case 3:
+					System.out.println("Digite o novo telefone: ");
+					String novoTelefone = leia.next();
+					clienteSelecionado.setTelefone(novoTelefone);
+					System.out.println("Telefone atualizado para: " + clienteSelecionado.getTelefone());
+
+					keyPress();
+					break;
+				default:
+					System.out.println("\nOpção Inválida!\n");
+					continue;
+				}
+
 			case 3:
 				System.out.println("Listar clientes ativos \n\n");
 				for (cliente cliente : clientes) {
 					cliente.visualizar();
 					System.out.println();
+					if (clientes.isEmpty())
+						System.out.println("Não há clientes na lista!");
 
 				}
 				keyPress();
@@ -128,27 +137,27 @@ public class Menu {
 				System.out.println("Digite o nome do cliente: ");
 				nomeDelete = leia.next();
 				
+
 				int index = -1;
 				for (int i = 0; i < clientes.size(); i++) {
-				    if (clientes.get(i).getNomeDono().equals(nomeDelete)) {
-				        index = i;
-				        break;
-				    }
+					if (clientes.get(i).getNomeDono().equals(nomeDelete)) {
+						index = i;
+						break;
+					}
 				}
-			
 
 				if (index != -1) {
-				    clientes.remove(index);
-				    System.out.println("\nA Conta do cliente: " + nomeDelete + " foi deletada com sucesso!");
+					clientes.remove(index);
+					System.out.println("\nA Conta do cliente: " + nomeDelete + " foi deletada com sucesso!");
 				} else {
-				    System.out.println("\nA Conta do cliente: " + nomeDelete + " não foi encontrada!");
+					System.out.println("\nA Conta do cliente: " + nomeDelete + " não foi encontrada!");
 				}
 				keyPress();
 				break;
 
 			default:
 				System.out.println("\nOpção Inválida!\n");
-				break;
+				continue;
 			}
 		}
 
